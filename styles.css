@@ -1,0 +1,322 @@
+body {
+	background:#678bb3; 
+	padding:0;
+	margin:0;
+}
+
+.sky-wrapper {
+	/* display: flex; */
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+}
+
+.inner-sky-wrapper {
+	position: absolute;
+}
+
+#sky {
+	width: 2100px;
+	height: 1350px;
+	background: transparent url(img/sky.jpg) top left no-repeat;
+	background-size: 2100px 1350px;
+	/* position: absolute;
+	position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+.position-wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.cloud {
+	width: 100px;
+	height:80px;
+	position:absolute;
+	background:transparent url(img/front_cloud.png) 0 0 no-repeat;
+	background-size: contain;
+	opacity: 0.5;
+}
+
+.fcloud01 {
+	top:300px;
+	z-index:100;
+	animation: drift 15s linear infinite;
+}
+		
+.fcloud02 {
+	top:320px;
+	z-index: 200;	
+	animation: drift 40s 5s linear infinite backwards;			 
+}
+
+.fcloud03 {
+	top: 350px;
+	z-index: 300;
+	animation: drift 30s 10s linear infinite backwards;
+}
+
+.fcloud04 {
+	top: 400px;
+	z-index: 400;
+	animation: drift 100s linear infinite both reverse;
+}
+
+.biker {
+	top: 300px;
+	right: 500px;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	background: transparent url(img/biker.png) 0 0 no-repeat;
+	background-size: contain;
+	animation: biker-ride 1.5s cubic-bezier(.33, .73, .51, 1.01) infinite both;
+}
+
+/* .girl {
+	top: 300px;
+	right: 1200px;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	background: transparent url(img/falling-girl.png) 0 0 no-repeat;
+	background-size: contain;
+	animation: fall 1s 1s cubic-bezier(.94, .36, .65, .54) infinite;
+} */
+
+
+.flying-bird {
+	position: absolute;
+}
+
+.flying-bird-1 {
+	top: 300px;
+	animation: fly 10s linear infinite both;
+	/* animation: fly 3s cubic-bezier(.33, .73, .51, 1.01) infinite both; */
+}
+.flying-bird-2 {
+	top: 380px;
+	animation: fly 10s 0.2s linear infinite both;
+	/* animation: fly 3s 0.2s cubic-bezier(.33, .73, .51, 1.01) infinite both; */
+}
+.flying-bird-3 {
+	top: 460px;
+	animation: fly 10s 0.4s linear infinite both;
+	/* animation: fly 3s 0.4s cubic-bezier(.33, .73, .51, 1.01) infinite both; */
+}
+
+.bird {
+	width: 100px;
+	height: 100px;
+	background: transparent url(img/bird-s.png) 0 0 no-repeat;
+	animation: flapping .2s steps(3) infinite;
+}
+
+@keyframes drift {
+	from{transform: translateX(-100px);}
+	to {transform: translateX(1800px);}
+}
+
+@keyframes biker-ride {
+	/* 0% {transfrom: translateX(0)}
+	50% { background: transparent url(img/falling-girl.png) 0 0 no-repeat,
+				transform: translateX(-100px);
+			}
+	100% {transform: translateX(-500px)} */
+	  0% {
+	  	right: 500px;
+	  	top: 500px;
+	  }
+
+	  25% {
+	  	right: 900px;
+	  	top: 500px;
+	  }
+
+	  27% {
+	  	right: 900px;
+	  	top: 650px;
+	  }
+
+	  100% {
+	  	right: 900px;
+	  	top: 650px;
+	  }
+}
+
+@keyframes fall {
+	100% {transform: translateY(200px)}
+}
+
+@keyframes fly {
+	0%{transform: translateX(-100px);}
+	10% {transform: translateX(200px) translateY(100px)}
+	30% {transform: translateX(600px) translateY(-100px)}
+	/* 10% {transform: translateX(200px) translateY(100px)}
+	10% {transform: translateX(200px) translateY(100px)}
+	10% {transform: translateX(200px) translateY(100px)} */
+	100% {transform: translateX(2200px);}
+}
+
+@keyframes flapping {
+	from { background-position: 0 0; }
+	to { background-position: -300px 0; }
+}
+
+
+.moon {
+	position: absolute;
+	top: 55%;
+	right: 23%;
+	width: 100px;
+	height: 100px;
+}
+
+.moon:hover .note {
+	opacity: 1;
+}
+
+.note {
+	top: -200px;
+	opacity: 0;
+	font-family: 'Lato';
+	width: 200px;
+	height: 150px;
+	color: #005c75;
+	background: #ffcb39;
+	position: absolute;
+	padding: 15px;
+	box-sizing: border-box;
+	transition: opacity .5s ease-in
+}
+
+.note:after {
+	content: '';
+	position: absolute;
+	bottom: -20px;
+	left: 50%;
+	margin-left: -20px;
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid #ffcb39;
+}
+
+
+.cable-car-group-right {
+	position: absolute;
+	top: 760px;
+	left: 340px;
+}
+
+.cable-car-group-left {
+	position: absolute;
+	top: 818px;
+	left: 340px;
+}
+
+.cable-car {
+	position: absolute;
+	top: 0;
+	width: 30px;
+	height: 30px;
+	background: transparent url(img/cable-car.png) 0 0 no-repeat;
+	background-size: contain;
+}
+
+.cable-car-group-right .cable-car.no1 {
+	animation: cable-right 10s linear infinite
+}
+
+.cable-car-group-right .cable-car.no2 {
+	animation: cable-right 10s 2s linear infinite
+}
+
+.cable-car-group-right .cable-car.no3 {
+	animation: cable-right 10s 4s linear infinite
+}
+
+.cable-car-group-right .cable-car.no4 {
+	animation: cable-right 10s 6s linear infinite
+}
+
+.cable-car-group-right .cable-car.no5 {
+	animation: cable-right 10s 8s linear infinite
+}
+
+.cable-car-group-left .cable-car.no1 {
+	animation: cable-right 10s linear infinite backwards reverse
+}
+
+.cable-car-group-left .cable-car.no2 {
+	animation: cable-right 10s 2s linear infinite backwards reverse
+}
+
+.cable-car-group-left .cable-car.no3 {
+	animation: cable-right 10s 4s linear infinite backwards reverse
+}
+
+.cable-car-group-left .cable-car.no4 {
+	animation: cable-right 10s 6s linear infinite backwards reverse
+}
+
+.cable-car-group-left .cable-car.no5 {
+	animation: cable-right 10s 8s linear infinite backwards reverse
+}
+
+.cable-car-group-right:after {
+	content: '';
+	display: block;
+	width: 550px;
+	border-top: 2px solid black;
+	position: absolute;
+	transform: rotate(-7deg);
+	top: 6px;
+	transform-origin: left;
+}
+
+.cable-car-group-left:after {
+	content: '';
+	display: block;
+	width: 550px;
+	border-top: 2px solid black;
+	position: absolute;
+	transform: rotate(-7deg);
+	top: 6px;
+	transform-origin: left;
+}
+
+@keyframes cable-right {
+	0% {transform: translateX(0) translateY(0)}
+	100% {transform: translateX(500px) translateY(-59px)}
+}
+
+
+
+#outer {
+	width: 250px;
+	height: 250px;
+	overflow: hidden;
+	position: relative;
+}
+
+#inner {
+	position: absolute;
+	top: 50%;
+	bottom: 50%
+}
+
+
+
+
+
+
+
+
+
